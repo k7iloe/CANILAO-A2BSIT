@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sparkol</title>
+</head>
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .bg-bulb{
+            width: 100%;
+            height: 100%;
+        }
+
+        .bulb_off{
+            object-fit: cover;
+            width: 100%;
+            height: 100vh;
+        }
+</style>
+<body>
+    <div class="bg-bulb">
+        <img id="bulb_img" src="img/bulboff.png" onclick="light_change()" class="bulb_off">
+    </div>
+</body>
+</html>
+
+<script>
+    function light_change() {
+
+        let image = document.getElementById('bulb_img');
+
+        if (image.src.includes("bulboff")) {
+
+                image.src = "img/bulb_on.png";
+
+                setTimeout(() => {
+                    image.src = "img/bulb-cover.png";
+                },2000);
+                
+        } else {
+            image.src = "img/bulboff.png";
+        }
+    }
+</script>
